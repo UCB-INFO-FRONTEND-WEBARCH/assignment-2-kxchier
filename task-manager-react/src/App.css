@@ -1,0 +1,199 @@
+/* This is your CSS files */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0; 
+  padding: 0;
+}
+
+html, 
+body, 
+#root {
+  width: 100%;
+}
+
+body { 
+  font-family: 'Roboto'; 
+  font-size:14px; 
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar content";
+  min-height: 100vh;
+}
+
+/* ========== HEADER STYLES ========== */
+
+.site-header {
+  grid-area: header;
+  background-color: #dc4c3e;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+}
+
+.site-header .left-group {
+  align-items: center;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.site-header .right-group {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.site-header .search-bar {
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem 0.5rem;
+  background-color: #e37367;
+  border-radius: 5px;
+  align-items: center;
+  display: flex;
+  gap: 0.3rem;
+}
+
+.site-header input {
+  width: 13rem;
+  outline: none;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+.site-header input::placeholder {
+  font-family: 'Roboto';
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.site-main {
+  display: contents;
+}
+
+/* ========== NAVIGATION STYLES ========== */
+
+.sidebar {
+  grid-area: sidebar;
+  background: #fefbf2;
+  color: #000000;
+  padding: 20px 2rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.sidebar ul li {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.sidebar .count {
+  margin-left: 5px;
+  color: #7e7d79;
+  font-size: 12px;
+}
+
+/* ========== MAIN CONTENT STYLES ========== */
+
+.site-content {
+  grid-area: content;
+  padding: 20px 50px;
+}
+
+.site-content h1 {
+  font-size: 20px;
+}
+
+
+.site-content .filters {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 5px;
+}
+
+.site-content .filters button.active {
+  background-color: #dc4c3e;
+  color: white;
+} 
+
+.site-content .task-form {
+  margin-top: 20px;
+}
+
+.site-content .task-form input {
+  outline: none;
+  margin-right: 10px;
+  height: 30px;
+}
+
+.site-content .task-form button {
+  outline: none;
+}
+
+.site-content .tasks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-content .tasks li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 2px solid #efefef;
+  padding: 10px 0;
+}
+
+.site-content .tasks li button {
+  margin-left: auto;
+}
+
+.site-content input[type="checkbox"] {
+  width: 2em;
+  height: 2em;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.site-content input[type="checkbox"]:checked {
+  background-color: #ccc;
+}
+
+/* ========== RESPONSIVE STYLES ========== */
+
+@media (max-width: 480px) {
+  body {
+      grid-template-columns: auto;
+      grid-template-areas:
+          "header"
+          "content"
+  }
+
+  .sidebar {
+      display: none;
+  }
+}
