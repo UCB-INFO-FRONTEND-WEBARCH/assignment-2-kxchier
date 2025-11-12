@@ -162,6 +162,10 @@ body {
   padding: 10px 0;
 }
 
+.site-content .tasks .completed label {
+  text-decoration: line-through;     
+}
+
 .site-content .tasks li button {
   margin-left: auto;
 }

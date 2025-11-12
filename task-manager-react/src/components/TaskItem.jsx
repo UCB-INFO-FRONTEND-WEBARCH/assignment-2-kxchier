@@ -2,7 +2,7 @@ import React from 'react'
 
 function TaskItem({task, onToggle, onDelete}) {
   return (
-    <li>
+    <li className={`${task.completed ? 'completed' : ''}`}>
         <input
             type="checkbox"
             id={`task-${task.id}`}
